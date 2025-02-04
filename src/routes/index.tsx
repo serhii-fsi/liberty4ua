@@ -1,320 +1,52 @@
-import { A } from "@solidjs/router";
-import Counter from "~/components/Counter";
 import { For } from "solid-js";
+
+import HeroHome from "~/components/HeroHome";
+import Mission from "~/components/Mission";
+import BulletedList from "~/components/BulletedList";
+import TitledList from "~/components/TitledList";
 
 export default function Home() {
   return (
     <main id="content">
-      {/* <!-- Hero --> */}
-      <div class="bg-neutral-900">
-        <div class="max-w-5xl mx-auto px-4 xl:px-0 pt-24 lg:pt-32 pb-24">
-          <h1 class="font-semibold text-white text-5xl md:text-6xl">
-            <span class="text-[#ff0]">Fund Ukraine's Military</span>
-            <br />
-            End Wasteful <span class="line-through">Aid</span>
-          </h1>
-          <div class="max-w-4xl">
-            <p class="mt-5 text-neutral-400 text-lg">
-              Exposing Corruption and Bias to Prioritize Military Support and
-              Secure Ukraine's Future.
-            </p>
+      <HeroHome />
 
-            <a
-              class="mt-5 group inline-flex items-center gap-x-2 py-4 px-6 bg-[#ff0] font-medium text-sm text-neutral-800 rounded-full focus:outline-none"
-              href="#"
-            >
-              Download Report
-              <svg
-                class="flex-shrink-0 size-4 transition group-hover:translate-x-0.5 group-hover:translate-x-0 group-focus:translate-x-0.5 group-focus:translate-x-0"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      {/* <!-- End Hero --> */}
+      <Mission />
 
-      {/* <!-- Testimonials --> */}
-      <div class="bg-neutral-900">
-        <div class="max-w-5xl px-4 xl:px-0 py-10 lg:py-20 mx-auto">
-          {/* <!-- Title --> */}
-          <div class="max-w-3xl mb-10 lg:mb-14">
-            <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">
-              Mission
-            </h2>
-            <p class="mt-1 text-neutral-400">Some text about US aid</p>
-          </div>
-          {/* <!-- End Title --> */}
+      <BulletedList
+        title={"Goals"}
+        description={"We aim several goals."}
+        list={[
+          `To redirect the $482 million in 2025 USAID funding, and other funds, to directly strengthen the Ukrainian military.`,
+          `To end funding for ineffective anti-corruption programs that have not decreased corruption in Ukraine.`,
+          `To end funding for media programs that have demonstrated biased and partisan propaganda.`,
+          `To promote transparency and accountability in the allocation of US aid to Ukraine.`,
+          `To prevent the spread of russian aggression and protect the security interests of the United States and its allies. Security interests of the United States and its allies.`,
+        ]}
+        button={{ title: "Download Report", url: "#" }}
+      />
 
-          {/* <!-- Grid --> */}
-          <div class="md:grid md:grid-cols-2 md:gap-10 lg:gap-16">
-            <div>
-              <p class="font-medium text-xl text-white md:text-2xl md:leading-normal xl:text-3xl xl:leading-normal">
-                Our mission is to ensure that U.S. aid to Ukraine is used
-                effectively to support its defense capabilities and long-term
-                stability.
-              </p>
-            </div>
-            {/* <!-- End Col --> */}
-            <div class="border-l-4 border-[#ff0] pl-8">
-              <p class="font-light text-xl text-white md:text-2xl md:leading-normal xl:text-3xl xl:leading-normal">
-                Current programs are not achieving their goals and may even be
-                counterproductive.
-                <br />
-                <br />
-                We aim to redirect funds from ineffective projects to the
-                Ukrainian military, enhancing its ability to defend the country
-                from aggression.
-              </p>
-            </div>
-            {/* <!-- End Col --> */}
-          </div>
-          {/* <!-- End Grid --> */}
-        </div>
-      </div>
-      {/* <!-- End Testimonials --> */}
-
-      {/* <!-- Approach --> */}
-      <div class="bg-neutral-900">
-        {/* <!-- Approach --> */}
-        <div class="max-w-5xl px-4 xl:px-0 py-10 lg:pt-20 mx-auto">
-          {/* <!-- Title --> */}
-          <div class="max-w-3xl mb-10 lg:mb-14">
-            <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">
-              Goals
-            </h2>
-            <p class="mt-1 text-neutral-400">We aim several goals.</p>
-          </div>
-          {/* <!-- End Title --> */}
-
-          {/* <!-- Grid --> */}
-          <div class="grid grid-cols-1 lg:grid-cols-1 gap-10 lg:gap-16 lg:items-center">
-            <div>
-              {/* <!-- Item --> */}
-              <div class="flex gap-x-5 ms-1">
-                <div class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
-                  <div class="relative z-10 size-8 flex justify-center items-center">
-                    <span class="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-[#ff0] font-semibold text-xs uppercase rounded-full">
-                      1
-                    </span>
-                  </div>
-                </div>
-                <div class="grow pt-0.5 pb-8 sm:pb-12">
-                  <p class="font-light text-lg lg:text-2xl text-neutral-400">
-                    To redirect the
-                    <span class="text-white"> $482 million </span>
-                    in 2025 USAID funding, and other funds, to directly
-                    strengthen the Ukrainian military.
-                  </p>
-                </div>
-              </div>
-              {/* <!-- End Item --> */}
-
-              {/* <!-- Item --> */}
-              <div class="flex gap-x-5 ms-1">
-                {/* <!-- Icon --> */}
-                <div class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
-                  <div class="relative z-10 size-8 flex justify-center items-center">
-                    <span class="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-[#ff0] font-semibold text-xs uppercase rounded-full">
-                      2
-                    </span>
-                  </div>
-                </div>
-                {/* <!-- End Icon --> */}
-
-                {/* <!-- Right Content --> */}
-                <div class="grow pt-0.5 pb-8 sm:pb-12">
-                  <p class="font-light text-lg lg:text-2xl text-neutral-400">
-                    To end funding for ineffective anti-corruption programs that
-                    have not decreased corruption in Ukraine.
-                  </p>
-                </div>
-                {/* <!-- End Right Content --> */}
-              </div>
-              {/* <!-- End Item --> */}
-
-              {/* <!-- Item --> */}
-              <div class="flex gap-x-5 ms-1">
-                {/* <!-- Icon --> */}
-                <div class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
-                  <div class="relative z-10 size-8 flex justify-center items-center">
-                    <span class="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-[#ff0] font-semibold text-xs uppercase rounded-full">
-                      3
-                    </span>
-                  </div>
-                </div>
-                {/* <!-- End Icon --> */}
-
-                {/* <!-- Right Content --> */}
-                <div class="grow pt-0.5 pb-8 sm:pb-12">
-                  <p class="font-light text-lg lg:text-2xl text-neutral-400">
-                    To end funding for media programs that have demonstrated
-                    biased and partisan propaganda.
-                  </p>
-                </div>
-                {/* <!-- End Right Content --> */}
-              </div>
-              {/* <!-- End Item --> */}
-
-              {/* <!-- Item --> */}
-              <div class="flex gap-x-5 ms-1">
-                {/* <!-- Icon --> */}
-                <div class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
-                  <div class="relative z-10 size-8 flex justify-center items-center">
-                    <span class="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-[#ff0] font-semibold text-xs uppercase rounded-full">
-                      4
-                    </span>
-                  </div>
-                </div>
-                {/* <!-- End Icon --> */}
-
-                {/* <!-- Right Content --> */}
-                <div class="grow pt-0.5 pb-8 sm:pb-12">
-                  <p class="font-light text-lg lg:text-2xl text-neutral-400">
-                    To promote transparency and accountability in the allocation
-                    of US aid to Ukraine.
-                  </p>
-                </div>
-                {/* <!-- End Right Content --> */}
-              </div>
-              {/* <!-- End Item --> */}
-
-              {/* <!-- Item --> */}
-              <div class="flex gap-x-5 ms-1">
-                {/* <!-- Icon --> */}
-                <div class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
-                  <div class="relative z-10 size-8 flex justify-center items-center">
-                    <span class="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-[#ff0] font-semibold text-xs uppercase rounded-full">
-                      5
-                    </span>
-                  </div>
-                </div>
-                {/* <!-- End Icon --> */}
-
-                {/* <!-- Right Content --> */}
-                <div class="grow pt-0.5 pb-8 sm:pb-12">
-                  <p class="font-light text-lg lg:text-2xl text-neutral-400">
-                    To prevent the spread of russian aggression and protect the
-                    security interests of the United States and its allies.
-                    Security interests of the United States and its allies.
-                  </p>
-                </div>
-                {/* <!-- End Right Content --> */}
-              </div>
-              {/* <!-- End Item --> */}
-
-              <a
-                class="mt-5 group inline-flex items-center gap-x-2 py-4 px-6 bg-[#ff0] font-medium text-sm text-neutral-800 rounded-full focus:outline-none"
-                href="#"
-              >
-                Download Report
-                <svg
-                  class="flex-shrink-0 size-4 transition group-hover:translate-x-0.5 group-hover:translate-x-0 group-focus:translate-x-0.5 group-focus:translate-x-0"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-            {/* <!-- End Timeline --> */}
-          </div>
-          {/* <!-- End Grid --> */}
-        </div>
-      </div>
-      {/* <!-- End Approach --> */}
-
-      {/* <!-- FAQ --> */}
-      <div class="max-w-5xl px-4 xl:px-0 py-10 lg:pt-20 mx-auto">
-        <div class="max-w-3xl mb-10 lg:mb-14">
-          <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">
-            Issues
-          </h2>
-          <p class="mt-1 text-neutral-400">We aim several goals.</p>
-        </div>
-
-        <div class="max-w-2xl mx-auto divide-y divide-neutral-700">
-          <div class="py-8 first:pt-0 last:pb-0">
-            <div class="flex gap-x-5">
-              <div class="grow">
-                <h3 class="font-semibold text-lg lg:text-2xl text-white pb-3">
-                  Ineffective Anti-Corruption Efforts
-                </h3>
-                <p class="font-light text-lg lg:text-xl text-neutral-400">
-                  Despite U.S. support, corruption in Ukraine persists, with
-                  numerous scandals involving luxury car sales, military food
-                  procurement, and misuse of funds.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="py-8 first:pt-0 last:pb-0">
-            <div class="flex gap-x-5">
-              <div class="grow">
-                <h3 class="font-semibold text-lg lg:text-2xl text-white pb-3">
-                  Biased Media Coverage
-                </h3>
-                <p class="font-light text-lg lg:text-xl text-neutral-400">
-                  U.S.-funded media outlets in Ukraine have been found to engage
-                  in one-sided propaganda, misrepresenting political figures and
-                  promoting partisan views, rather than objective reporting.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="py-8 first:pt-0 last:pb-0">
-            <div class="flex gap-x-5">
-              <div class="grow">
-                <h3 class="font-semibold text-lg lg:text-2xl text-white pb-3">
-                  Misuse of Humanitarian Aid
-                </h3>
-                <p class="font-light text-lg lg:text-xl text-neutral-400">
-                  Significant amounts of humanitarian aid have been embezzled,
-                  with evidence of organized theft by high-ranking officials.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="py-8 first:pt-0 last:pb-0">
-            <div class="flex gap-x-5">
-              <div class="grow">
-                <h3 class="font-semibold text-lg lg:text-2xl text-white pb-3">
-                  Human Rights Abuses
-                </h3>
-                <p class="font-light text-lg lg:text-xl text-neutral-400">
-                  There are credible reports of human rights abuses, including
-                  illegal detentions, torture, and beatings, within Ukrainian
-                  government institutions, and a lack of appropriate response
-                  from human rights organizations.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <!-- End FAQ --> */}
+      <TitledList
+        title={"Issues"}
+        description={"We aim several goals."}
+        list={[
+          {
+            title: `Ineffective Anti-Corruption Efforts`,
+            text: `Despite U.S. support, corruption in Ukraine persists, with numerous scandals involving luxury car sales, military food procurement, and misuse of funds.`,
+          },
+          {
+            title: `Biased Media Coverage`,
+            text: `U.S.-funded media outlets in Ukraine have been found to engage in one-sided propaganda, misrepresenting political figures and promoting partisan views, rather than objective reporting.`,
+          },
+          {
+            title: `Misuse of Humanitarian Aid`,
+            text: `Significant amounts of humanitarian aid have been embezzled, with evidence of organized theft by high-ranking officials.`,
+          },
+          {
+            title: `Human Rights Abuses`,
+            text: `There are credible reports of human rights abuses, including illegal detentions, torture, and beatings, within Ukrainian government institutions, and a lack of appropriate response from human rights organizations.`,
+          },
+        ]}
+      />
 
       {/* <!-- Case Stories --> */}
       <div class="bg-neutral-900 bg-gradient-to-t from-black to-transparent">
